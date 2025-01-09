@@ -3,7 +3,8 @@ import express from "express";
 import axios from "axios";
 import * as cheerio from "cheerio";
 const app = express();
-
+app.use(express.json());
+app.use(cors());
 const newspapers = [
   {
     name: "bbc",
