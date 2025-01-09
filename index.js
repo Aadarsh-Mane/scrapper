@@ -1,6 +1,7 @@
 const PORT = 8000;
 import express from "express";
 import axios from "axios";
+import cors from "cors";
 import * as cheerio from "cheerio";
 const app = express();
 app.use(express.json());
