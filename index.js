@@ -51,7 +51,7 @@ newspapers.forEach((newspaper) => {
 });
 
 app.get("/", (req, res) => {
-  res.json("Welcome to my News API");
+  res.json("Welcome to my Scrapper API");
 });
 
 app.get("/news", (req, res) => {
