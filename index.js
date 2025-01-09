@@ -27,7 +27,9 @@ newspapers.forEach((newspaper) => {
         const anchor = $(this).find("a");
         const link = anchor.attr("href");
         const text = anchor.text().trim();
-        const image = $(this).find("img").attr("src");
+        const image =
+          $(this).find("img.lazyloading").attr("data-src") ||
+          $(this).find("img.lazyloading").attr("src");
         const title = $(this).find("h2.title").text().trim();
         const description = $(this).find("p").text().trim();
         const date = $(this).find("div.date").text().trim();
@@ -36,11 +38,7 @@ newspapers.forEach((newspaper) => {
           articles.push({
             link: link.startsWith("http") ? link : newspaper.base + link,
             text,
-            image: image
-              ? image.startsWith("http")
-                ? image
-                : newspaper.base + image
-              : null,
+            image: image,
             title,
             date,
             description,
